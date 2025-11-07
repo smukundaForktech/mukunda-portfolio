@@ -1,0 +1,157 @@
+.fullHeight {
+    height: 100vh
+}
+
+.transition-box {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.transition-card {
+    width: 250px;
+    height: 250px;
+    background: #667eea;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.transition-card .fade {
+    transition: opacity 0.5s ease;
+}
+
+.transition-box .fade:hover {
+    opacity: 0.5;
+}
+
+.transition-box .scale {
+    transition: transform 0.5s ease;
+}
+
+.transition-box .scale:hover {
+    transform: scale(1.2);
+}
+
+.transition-box .rotate {
+    transition: transform 0.5s ease;
+}
+
+.transition-box .rotate:hover {
+    transform: rotate(180deg);
+}
+
+.transition-box .color {
+    /* transition: background-color 0.5s ease, color 0.5s ease; */
+    transition: all 0.5s ease;
+}
+
+.transition-box .color:hover {
+    background-color: #e74c3c;
+    color: brown;
+}
+
+.transition-box .multi {
+    transition: all 0.5s ease;
+}
+
+.transition-box .multi:hover {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 0.5;
+    background-color: #e74c3c;
+    color: whitesmoke;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    border: 5px solid gray;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.spinner-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.transition-box .spin {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+.transition-box .pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.transition-box .bounce {
+    animation: bounce 1s linear infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-20px);
+    }
+
+    75% {
+        transform: translateX(20px);
+    }
+}
+
+.transition-box .shake {
+    animation: shake 0.5s infinite;
+}
+
+.transition-box .multiAnimation{
+    position: relative;
+    animation: spin 3s linear infinite, shake 0.5s infinite
+}
